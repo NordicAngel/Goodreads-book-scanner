@@ -17,7 +17,7 @@ for event in dev.read_loop():
     if event.type != evdev.ecodes.EV_KEY: #a guard agenst non key events
         continue
 
-    data = evdev.catagorize(event)
+    data = evdev.categorize(event)
     if data.keystate != 1: #guard agenst non down presses
         continue
 
