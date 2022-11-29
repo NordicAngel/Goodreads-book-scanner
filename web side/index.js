@@ -3,13 +3,18 @@ const app = Vue.createApp({
         return {
             }
 
+        },
+        methods:{
+          openSocket(){
+            SetupWebSocket()
+          }  
         }
     },
 );
 
 function SetupWebSocket(){
 
-    let ip = "ws://10.200.178.183:12000"
+    let ip = "ws://localhost:12000"
 
     var ws = new WebSocket(ip)
 
@@ -22,10 +27,9 @@ function SetupWebSocket(){
         
     }
 
-    while (true){
-        console.log(ws.readyState)
-    }
+    // while (true){
+    //     console.log(ws.readyState)
+    // }
 }
 
-SetupWebSocket()
 
