@@ -3,11 +3,38 @@
 
 <head>
     <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div id="app">
+        
+                   
+
+        <div class="row" style="position:relative; left: 80px; top:10px; background-color:bisque">
+            {{ title }}
+        </div>
+        <div class="row" style="position:relative; left: 80px; top:20px; background-color:bisque">
+            {{ author }}
+        </div>
+        <div class="row" style="position:relative; left: 80px; top:30px; background-color:bisque">
+            {{ numberOfPages }}
+        </div>
+        <div class="row" style="position:relative; left: 80px; top:40px; background-color:bisque">
+            {{ subjects }}
+        </div>
+        <div class="row" style="position:relative; left: 80px; top:50px; background-color:bisque">
+            {{ languages }}
+        </div>
+        <div class="row" style="position:relative; left: 80px; top:60px; background-color:bisque">
+            {{ publishDate }}
+        </div>
+        <button class="btn btn-dark" type="button" @click="GetBookByIsbn()">test</button> 
     </div>
+
 <script src="./index.js"></script>
 <script>app.mount("#app");</script>
 </body>
