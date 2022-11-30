@@ -13,7 +13,7 @@
     <div id="app">
          
     <div style="position:relativ;">
-        <input type="text" v-model="isbn">
+        <input id="inputField" type="text" v-model="isbn" @keyup.enter="GetBookByIsbn(); TurnTrue()">
         <button class="btn btn-dark" type="button" @click="GetBookByIsbn(); TurnTrue()">søg</button>
     </div>    
     <div v-show="show">

@@ -23,13 +23,13 @@ const app = Vue.createApp({
             //Finder en bog ved hjælp af et API kald ud fra dens ISBN nummer
             GetBookByIsbn(){
                 const BookSource = `https://openlibrary.org/isbn/${this.isbn}.json`
-                //
+                inputfield = document.getElementById("inputField")
+                inputfield.select()
+
                 axios.get(BookSource)
 
             
                     .then( response =>{
-                        
-                      
                         this.title = response.data.title
                         this.author = response.data.authors
                         this.subjects = response.data.subjects
