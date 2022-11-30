@@ -14,8 +14,7 @@ scancodes = {
 dev = evdev.InputDevice('/dev/input/event1')
 
 
-@asyncio.coroutine
-def hello(websocket):
+async def hello(websocket):
     isbn = ""
     for event in dev.read_loop():
         if event.type != evdev.ecodes.EV_KEY: #a guard agenst non key events
@@ -26,23 +25,21 @@ def hello(websocket):
             continue
 
         if data.scancode == 28: #if event is new line send isbn
-            yield from  broadcast_isb(websocket, isbn)
+            await broadcast_isb(websocket, isbn)
             isbn = ""
             continue
 
         isbn += scancodes.get(data.scancode)
 
 
-@asyncio.coroutine
-def broadcast_isb(websocket, isbn):
-    yield from  websocket.send("Hello world!")
+async def broadcast_isb(websocket, isbn):
+    await websocket.send("Hello world!")
     print(isbn)
 
 
-@asyncio.coroutine
-def main():
-    with websockets.serve(hello, "localhost", 12000):
-        yield from asyncio.Future()
+async def main():
+    async with websockets.serve(hello, "localhost", 12000):
+        await asyncio.Future()
 
 
 asyncio.run(main())
