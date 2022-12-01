@@ -93,6 +93,12 @@ const app = Vue.createApp({
                 ws.onerror = function(evt){
                     console.log(evt)
                 }
+                window.addEventListener('beforeunload', (evt) =>{
+                    ws.close()
+                    evt.preventDefault()
+                    evt.returnValue = ''
+                    
+                })
             }
         }
     },
@@ -100,11 +106,5 @@ const app = Vue.createApp({
 );
 
 
-
-
-function SetupWebSocket(){
-
-    
-}
 
 

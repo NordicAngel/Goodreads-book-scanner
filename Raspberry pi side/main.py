@@ -15,8 +15,6 @@ for device in devices:
         dev = device
 
 
-
-
 async def hello(websocket):
     isbn = ""
     for event in dev.read_loop():
@@ -30,18 +28,20 @@ async def hello(websocket):
         if data.scancode == 28: #if event is new line send isbn
             await broadcast_isb(websocket, isbn)
             isbn = ""
-            continue
+            break
 
         isbn += scancodes.get(data.scancode)
-    print(1)
 
 
 async def broadcast_isb(websocket, isbn):
     await websocket.send(isbn)
+    #await websocket.close()
+    print(isbn)
 
 
 async def main():
     async with websockets.serve(hello, "0.0.0.0", 12000):
+        print("hi")
         await asyncio.Future()
 
 
