@@ -9,9 +9,12 @@ scancodes = {
 }
 
 
+devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
+for device in devices:
+    if device.phys == "usb-20980000.usb-1/input0":
+        dev = device
 
 
-dev = evdev.InputDevice('/dev/input/event1')
 
 
 async def hello(websocket):
@@ -30,15 +33,15 @@ async def hello(websocket):
             continue
 
         isbn += scancodes.get(data.scancode)
+    print(1)
 
 
 async def broadcast_isb(websocket, isbn):
-    await websocket.send("Hello world!")
-    print(isbn)
+    await websocket.send(isbn)
 
 
 async def main():
-    async with websockets.serve(hello, "localhost", 12000):
+    async with websockets.serve(hello, "0.0.0.0", 12000):
         await asyncio.Future()
 
 
