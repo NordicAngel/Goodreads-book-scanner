@@ -1,1 +1,1 @@
-"# Goodreads-book-scanner" 
+"# OpenLibrary-book-scanner" 
