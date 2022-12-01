@@ -7,42 +7,44 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"  href="stylesheet.css" />
 </head>
 
 <body>
     <div id="app">
          
     <div style="position:relativ;">
-        <input id="inputField" type="text" v-model="isbn" @keyup.enter="GetBookByIsbn(); TurnTrue()">
-        <button class="btn btn-dark" type="button" @click="GetBookByIsbn(); TurnTrue()">søg</button>
+        <input id="inputField" type="text" v-model="isbn" @keyup.enter="GetBookByIsbn">
+        <button class="btn btn-dark" type="button" @click="GetBookByIsbn">søg</button>
+        <button @click="OpenWebSocket">open</button>
+
     </div>    
     <div v-show="show">
         
-        <div class="row" style="position:relative; left: 80px; top:10px; background-color:bisque">
+        <div class="BookData"> 
             Titles: {{ title }}
         </div>
-        <div class="row" style="position:relative; left: 80px; top:20px; background-color:bisque">
+        <div class="BookData"> 
             Author: {{ personalAuthorName }}
         </div>
-        <div class="row" style="position:relative; left: 80px; top:30px; background-color:bisque">
+        <div class="BookData" >
             Number of pages: {{ numberOfPages }}
         </div>
         <div></div>
-        <div class="row" style="position:relative; left: 80px; top:40px; background-color:bisque">
+        <div class="BookData" >
             Genre: 
             <li v-for="(value) in subjects">
                 {{ value }}
             </li>
            
         </div>
-        <div class="row" style="position:relative; left: 80px; top:50px; background-color:bisque">
+        <div class="BookData" >
             Language(s): {{ languageTrimmed }}
         </div>
-        <div class="row" style="position:relative; left: 80px; top:60px; background-color:bisque">
+        <div class="BookData" >
             Publis Date: {{ publishDate }}
         </div>
     </div>    
-        <button @click="openSocket">open</button>
 </div>
 
 <script src="./index.js"></script>

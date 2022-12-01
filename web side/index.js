@@ -23,9 +23,6 @@ const app = Vue.createApp({
             //Finder en bog ved hjælp af et API kald ud fra dens ISBN nummer
             GetBookByIsbn(){
                 const BookSource = `https://openlibrary.org/isbn/${this.isbn}.json`
-                inputfield = document.getElementById("inputField")
-                inputfield.select()
-
                 axios.get(BookSource)
 
             
@@ -47,6 +44,8 @@ const app = Vue.createApp({
                         this.workTrimmed = response.data.works[0].key.split("/")[2]
 
                         this.GetAuthorName()
+                        //Gør voes oversigt i view delen er usynlig indtil der klikkes på knappen 
+                        this.show = true
                     })
                     .catch(function(error){
                         console.log(error);
@@ -55,7 +54,6 @@ const app = Vue.createApp({
             //Får fat i forfatterens navn ved at lave et nyt API kald med forfatter id for at få fat i navnet.
             GetAuthorName(){
                 const AutherSource = `https://openlibrary.org/authors/${this.authorTrimmed}.json`
-                console.log(this.authorTrimmed)
                 axios.get(AutherSource)
                 .then( response =>{
                       this.personalAuthorName = response.data.name
@@ -74,9 +72,27 @@ const app = Vue.createApp({
                     console.log(error);
                 })
             },
-            //Gør voes oversigt i view delen er usynlig indtil der klikkes på knappen 
-            TurnTrue(){
-                this.show=true
+            OpenWebSocket(){
+                let ip = "ws://192.168.14.102:12000"
+
+                var ws = new WebSocket(ip)
+
+                ws.onopen = function(){
+                    alert("Connection is open")
+                }
+
+                ws.onmessage = (evt) => {
+                    this.isbn = evt.data
+                    this.GetBookByIsbn()
+                }
+
+                ws.onclose = function(){
+                    alert("Scanner conection has been closed")
+                }
+
+                ws.onerror = function(evt){
+                    console.log(evt)
+                }
             }
         }
     },
@@ -88,22 +104,7 @@ const app = Vue.createApp({
 
 function SetupWebSocket(){
 
-    let ip = "ws://localhost:12000"
-
-    var ws = new WebSocket(ip)
-
-    ws.onopen = function(){
-        alert("Connection is open")
-    }
-
-    ws.onmessage = function(evt){
-        console.log(`isbn is: ${evt.data}`)
-        
-    }
-
-    // while (true){
-    //     console.log(ws.readyState)
-    // }
+    
 }
 
 
