@@ -5,7 +5,7 @@ namespace OpenLibraryWebService.Managers
 {
     public class BookManager : IBookManager<List_Names>
     {
-        private const string connectionstring = "Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private const string connectionstring = "Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password=AdminDaniel1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public List_Names Create(List_Names item)
         {
@@ -14,8 +14,9 @@ namespace OpenLibraryWebService.Managers
             {
                 connection.Open();
 
-                SqlCommand cmd = new SqlCommand(connectionstring, connection);
+                SqlCommand cmd = new SqlCommand(sql, connection);
 
+                cmd.Parameters.AddWithValue("@ID", item.ID);
                 cmd.Parameters.AddWithValue("@List_Name", item.List_Name);
 
                 int rows = cmd.ExecuteNonQuery();
@@ -30,13 +31,41 @@ namespace OpenLibraryWebService.Managers
             }
         }
 
+        public List<List_Names> GetAll()
+        {
+            List<List_Names> liste = new List<List_Names>();
+            string sql = "select * from List_Names";
+
+
+            using (SqlConnection connection = new SqlConnection(connectionstring))
+            {
+
+                connection.Open();
+
+
+                SqlCommand cmd = new SqlCommand(sql, connection);
+
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    List_Names list = ReadList(reader);
+                    liste.Add(list);
+                }
+                
+            }
+            return liste;
+        }
+
         public List_Names GetByID(int id)
         {
-            string sql = "SELECT FROM List_Names where ID=@ID";
+            string sql = "SELECT * FROM List_Names where ID=@ID";
             using(SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand(connectionstring, connection);
+                SqlCommand cmd = new SqlCommand(sql, connection);
 
                 cmd.Parameters.AddWithValue("@ID", id);
 

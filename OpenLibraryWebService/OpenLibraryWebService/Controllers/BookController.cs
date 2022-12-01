@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OpenLibraryWebService.Managers;
 using OpenLibraryWebServiceLibrary.Model;
+using System.Collections;
 
 namespace OpenLibraryWebService.Controllers
 {
@@ -8,13 +9,14 @@ namespace OpenLibraryWebService.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBookManager<List_Names> _bookManager = new BookManager();
+        private readonly BookManager _bookManager = new BookManager();
 
         // GET: api/<BookController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAll()
         {
-            return new string[] { "value1", "value2" };
+            //return new string[] { "value1", "value2" };
+            return Ok(_bookManager.GetAll());
         }
 
         // GET api/<BookController>/5
@@ -33,16 +35,6 @@ namespace OpenLibraryWebService.Controllers
             return Ok(_bookManager.Create(list_Names));
         }
 
-        // PUT api/<BookController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<BookController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        
     }
 }
