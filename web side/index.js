@@ -14,6 +14,7 @@ const app = Vue.createApp({
             languageTrimmed:"",
             show: false,
             workTrimmed: "",
+            connectionStatus: ""
             }
 
         },
@@ -44,7 +45,7 @@ const app = Vue.createApp({
                         this.workTrimmed = response.data.works[0].key.split("/")[2]
 
                         this.GetAuthorName()
-                        //Gør voes oversigt i view delen er usynlig indtil der klikkes på knappen 
+                        //Gør vores oversigt i view delen er usynlig indtil der klikkes på knappen 
                         this.show = true
                     })
                     .catch(function(error){
@@ -74,31 +75,35 @@ const app = Vue.createApp({
             },
             OpenWebSocket(){
                 let ip = "ws://192.168.14.102:12000"
-
+                
+                // Showing popup
+                document.getElementById('scanpopup').classList.remove("hide")
+                this.connectionStatus = "Establishing connection ..."
+                
+                // Trying to open webSocket
                 var ws = new WebSocket(ip)
-
-                ws.onopen = function(){
-                    alert("Connection is open")
+                
+                // On succesful opening changes popup text 
+                ws.onopen = () => {
+                    this.connectionStatus = "Ready for scanning ..."
                 }
 
+                // On incoming message insert isbn and searches for a book
                 ws.onmessage = (evt) => {
                     this.isbn = evt.data
                     this.GetBookByIsbn()
                 }
 
-                ws.onclose = function(){
-                    alert("Scanner conection has been closed")
+                // On closing connection hides popup
+                ws.onclose = () => {
+                document.getElementById('scanpopup').classList.add("hide")
+                    this.connectionStatus = ""
                 }
 
-                ws.onerror = function(evt){
+                // On error print console
+                ws.onerror = (evt) => {
                     console.log(evt)
                 }
-                window.addEventListener('beforeunload', (evt) =>{
-                    ws.close()
-                    evt.preventDefault()
-                    evt.returnValue = ''
-                    
-                })
             }
         }
     },

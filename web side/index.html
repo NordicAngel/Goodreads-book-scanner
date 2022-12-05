@@ -12,11 +12,15 @@
 
 <body>
     <div id="app">
-         
+    <div id="scanpopup" class="popup hide">
+        <span class="popuptext">
+            {{ connectionStatus }}
+        </span>
+    </div>
     <div style="position:relativ;">
         <input id="inputField" type="text" v-model="isbn" @keyup.enter="GetBookByIsbn">
-        <button class="btn btn-dark" type="button" @click="GetBookByIsbn">søg</button>
-        <button @click="OpenWebSocket">open</button>
+        <button class="btn btn-dark" type="button" @click="GetBookByIsbn">search</button>
+        <button class="btn" @click="OpenWebSocket">Begin scan</button>
 
     </div>    
     <div v-show="show">
@@ -42,7 +46,7 @@
             Language(s): {{ languageTrimmed }}
         </div>
         <div class="BookData" >
-            Publis Date: {{ publishDate }}
+            Publish Date: {{ publishDate }}
         </div>
     </div>    
 </div>

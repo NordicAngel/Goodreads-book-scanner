@@ -8,21 +8,21 @@ scancodes = {
     10: u'9', 11: u'0', 28: u'CRLF'
 }
 
-
+#Finds the correct device
 devices = [evdev.InputDevice(path) for path in evdev.list_devices()]
 for device in devices:
     if device.phys == "usb-20980000.usb-1/input0":
         dev = device
 
 
-async def hello(websocket):
+async def read_isbn(websocket):
     isbn = ""
     for event in dev.read_loop():
-        if event.type != evdev.ecodes.EV_KEY: #a guard agenst non key events
+        if event.type != evdev.ecodes.EV_KEY: #a guard against non key events
             continue
 
         data = evdev.categorize(event)
-        if data.keystate != 1: #guard agenst non down presses
+        if data.keystate != 1: #guard against non down presses
             continue
 
         if data.scancode == 28: #if event is new line send isbn
@@ -30,18 +30,16 @@ async def hello(websocket):
             isbn = ""
             break
 
-        isbn += scancodes.get(data.scancode)
+        isbn += scancodes.get(data.scancode) #add character to the variable
 
 
 async def broadcast_isb(websocket, isbn):
     await websocket.send(isbn)
-    #await websocket.close()
-    print(isbn)
 
 
+#Opens a websocketserver that returns one isbn
 async def main():
-    async with websockets.serve(hello, "0.0.0.0", 12000):
-        print("hi")
+    async with websockets.serve(read_isbn, "0.0.0.0", 12000):
         await asyncio.Future()
 
 
