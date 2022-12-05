@@ -34,7 +34,7 @@ namespace OpenLibraryWebService.Managers
         public List<List_Names> GetAll()
         {
             List<List_Names> liste = new List<List_Names>();
-            string sql = "select * from List_Names";
+            string sql = "SELECT * FROM List_Names";
 
 
             using (SqlConnection connection = new SqlConnection(connectionstring))
