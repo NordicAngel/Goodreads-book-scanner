@@ -2933,23 +2933,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Danie\\.nuget\\packages\\": {},
+    "C:\\Users\\Kasper\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
+      "projectUniqueName": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
       "projectName": "OpenLibraryWebService",
-      "projectPath": "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
-      "packagesPath": "C:\\Users\\Danie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebService\\obj\\",
+      "projectPath": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
+      "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2965,8 +2965,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
-              "projectPath": "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj"
+            "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
+              "projectPath": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj"
             }
           }
         }

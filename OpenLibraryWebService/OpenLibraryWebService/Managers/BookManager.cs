@@ -3,27 +3,28 @@ using OpenLibraryWebServiceLibrary.Model;
 
 namespace OpenLibraryWebService.Managers
 {
-    public class BookManager : IBookManager<List_Names>
+    public class BookManager : IBookManager<Books_In_List>
     {
         private const string connectionstring = "Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password=AdminDaniel1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        public List_Names Create(List_Names item)
+        public Books_In_List Create(Books_In_List item)
         {
-            string sql = "INSERT INTO List_Names values(@ID, @List_Name)";
-            using(SqlConnection connection = new SqlConnection(connectionstring))
+            string sql = "INSERT INTO Books_In_List1 values(@List_ID, @ISBN)";
+            using (SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
 
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@ID", item.ID);
-                cmd.Parameters.AddWithValue("@List_Name", item.List_Name);
+                //cmd.Parameters.AddWithValue("@ID", item.ID);
+                cmd.Parameters.AddWithValue("@List_ID", item.List_ID);
+                cmd.Parameters.AddWithValue("@ISBN", item.ISBN);
 
                 int rows = cmd.ExecuteNonQuery();
 
                 if (rows != 1)
                 {
-                    throw new ArgumentException("Can't Create List");
+                    throw new ArgumentException("Can't Create Book");
                 }
 
                 return item;
@@ -31,10 +32,11 @@ namespace OpenLibraryWebService.Managers
             }
         }
 
-        public List<List_Names> GetAll()
+
+        public List<Books_In_List> GetAll()
         {
-            List<List_Names> liste = new List<List_Names>();
-            string sql = "SELECT * FROM List_Names";
+            List<Books_In_List> liste = new List<Books_In_List>();
+            string sql = "SELECT * FROM Books_In_List1";
 
 
             using (SqlConnection connection = new SqlConnection(connectionstring))
@@ -51,18 +53,18 @@ namespace OpenLibraryWebService.Managers
 
                 while (reader.Read())
                 {
-                    List_Names list = ReadList(reader);
+                    Books_In_List list = ReadList(reader);
                     liste.Add(list);
                 }
-                
+
             }
             return liste;
         }
 
-        public List_Names GetByID(int id)
+        public Books_In_List GetByID(int id)
         {
-            string sql = "SELECT * FROM List_Names where ID=@ID";
-            using(SqlConnection connection = new SqlConnection(connectionstring))
+            string sql = "SELECT * FROM Books_In_List1 where ID=@ID";
+            using (SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(sql, connection);
@@ -71,24 +73,25 @@ namespace OpenLibraryWebService.Managers
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                while(reader.Read())
+                while (reader.Read())
                 {
-                    List_Names listnames = ReadList(reader);
-                    return listnames;
+                    Books_In_List BookNames = ReadList(reader);
+                    return BookNames;
                 }
             }
 
             throw new ArgumentException("Can't find the list with given ID");
         }
 
-        private List_Names ReadList(SqlDataReader reader)
+        private Books_In_List ReadList(SqlDataReader reader)
         {
-            List_Names listnames = new List_Names();
+            Books_In_List BookNames = new Books_In_List();
 
-            listnames.ID = reader.GetInt32(0);
-            listnames.List_Name = reader.GetString(1);
+            BookNames.ID = reader.GetInt32(0);
+            BookNames.List_ID = reader.GetInt32(1);
+            BookNames.ISBN = reader.GetInt32(2);
 
-            return listnames;
+            return BookNames;
         }
     }
 }

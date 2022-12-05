@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using OpenLibraryWebService.Managers;
 using OpenLibraryWebServiceLibrary.Model;
-using System.Collections;
 
 namespace OpenLibraryWebService.Controllers
 {
@@ -27,14 +27,12 @@ namespace OpenLibraryWebService.Controllers
             return Ok(_bookManager.GetByID(id));
         }
 
-        // POST api/<BookController>
+        // POST api/<ListController>
         [HttpPost]
 
-        public IActionResult Post([FromBody] List_Names list_Names)
+        public IActionResult Post([FromBody] Books_In_List List_ID)
         {
-            return Ok(_bookManager.Create(list_Names));
+            return Created("https://openlibrary.azurewebsites.net/api/book", _bookManager.Create(List_ID));
         }
-
-        
     }
 }

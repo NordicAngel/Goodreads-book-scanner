@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "niXQzhvNhA2ilPa+z15utxh0zhZjB/Z8gE3bJ+zJ5ydlAoU6niEbdFjLYNZKl52ocU7d1gheJRwolKxyth54fg==",
+  "dgSpecHash": "5pgfCI/pUPuUNwAdAqUflNPufsy4dmyYQJ81/Eh8QA67ieQg0qfXi6K3cX3kMaXiRNWhLOsjH9UDareXiaTSyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Danie\\source\\repos\\openlibrary-book-scanner1\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
+  "projectFilePath": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
