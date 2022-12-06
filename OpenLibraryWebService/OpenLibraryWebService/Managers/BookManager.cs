@@ -61,9 +61,11 @@ namespace OpenLibraryWebService.Managers
             return liste;
         }
 
-        public Books_In_List GetByID(int id)
+        public List<Books_In_List> GetByID(int id)
         {
-            string sql = "SELECT * FROM Books_In_List1 where ID=@ID";
+            string sql = "SELECT * FROM Books_In_List1 where List_ID=@ID";
+
+            List<Books_In_List> list = new List<Books_In_List> ();
             using (SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
@@ -73,14 +75,16 @@ namespace OpenLibraryWebService.Managers
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
+
                 while (reader.Read())
                 {
                     Books_In_List BookNames = ReadList(reader);
-                    return BookNames;
+                    list.Add(BookNames);
+                    
                 }
             }
-
-            throw new ArgumentException("Can't find the list with given ID");
+            return list;
+            
         }
 
         private Books_In_List ReadList(SqlDataReader reader)

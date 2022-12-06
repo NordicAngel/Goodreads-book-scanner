@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "73erDJq20MA6g5/PpBeleTx3ZpzqeKMv3yyZkbupgYB3MJP0Z3vUOkb5/qWjY3vOVBQQVEzJSa0nObAglEtHkQ==",
+  "dgSpecHash": "lckUMENxGEde0WiA3NkCN7aZt+VUVzjtXNgB4monzAgMAEZsfW8v0BcIto3bxq5JmnYXOs7+nLUXcwKfVRp7WA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kasper\\.vscode\\template\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
+  "projectFilePath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kasper\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\Kasper\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",

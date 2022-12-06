@@ -4,6 +4,6 @@
     {
         List<T> GetAll();
         T Create(T book);
-        T GetByID(int id);
+        List<T> GetByID(int id);
     }
 }
