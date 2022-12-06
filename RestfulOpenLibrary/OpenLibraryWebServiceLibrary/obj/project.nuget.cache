@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CnnLpAFuzVVtyrwRWt08BTmTbNAM6CoAk2Iu2QWbZOnqzhXv1eI0cqL1JrTLMmRyr0ZnwE6dm9CeEegN5cW/fQ==",
+  "dgSpecHash": "vReXJffJ+Pw8lZxUh8YAo6/ca8osMD/EsTdtmsICFY7obwpv/Rz/bEXjc9TlGyGgx02LuTP8OGP5cqVi03IZkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
+  "projectFilePath": "C:\\Users\\veste\\OneDrive\\Skrivebord\\openlibrary-book-scanner\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

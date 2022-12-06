@@ -43,6 +43,21 @@ namespace RestfulOpenLibrary.Managers
                 return lists.Max(l => l.ID);
             } 
         }
+
+        public List_Names DeleteList(int id)
+        {
+            string sql = "DELETE FROM List_Names WHERE ID = @id";
+
+            using(SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(sql, connection);
+
+                cmd.Parameters.AddWithValue("id", id);
+            }
+        }
+
         private List_Names ReadList(SqlDataReader reader)
         {
             List_Names list = new List_Names();

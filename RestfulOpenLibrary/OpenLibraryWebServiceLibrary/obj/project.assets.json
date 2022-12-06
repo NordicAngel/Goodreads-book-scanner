@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\veste\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\veste\\OneDrive\\Skrivebord\\openlibrary-book-scanner\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
       "projectName": "RestfulLibrary",
-      "projectPath": "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\obj\\",
+      "projectPath": "C:\\Users\\veste\\OneDrive\\Skrivebord\\openlibrary-book-scanner\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj",
+      "packagesPath": "C:\\Users\\veste\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\veste\\OneDrive\\Skrivebord\\openlibrary-book-scanner\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\veste\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

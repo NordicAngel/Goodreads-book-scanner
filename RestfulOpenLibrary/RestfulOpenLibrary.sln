@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulOpenLibrary", "Restf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulOpenLibraryTests", "RestfulOpenLibraryTests\RestfulOpenLibraryTests.csproj", "{2EA4DA79-8A2F-4665-ADA3-A30F11E790FE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulLibrary", "OpenLibraryWebServiceLibrary\RestfulLibrary.csproj", "{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2EA4DA79-8A2F-4665-ADA3-A30F11E790FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EA4DA79-8A2F-4665-ADA3-A30F11E790FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EA4DA79-8A2F-4665-ADA3-A30F11E790FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
