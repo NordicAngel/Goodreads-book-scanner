@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
+using RestfulLibrary.Model;
 
 namespace RestfulOpenLibrary.Managers
 {
@@ -28,15 +30,27 @@ namespace RestfulOpenLibrary.Managers
                 cmd2.Parameters.AddWithValue("@name", name);
 
                 SqlDataReader reader = cmd2.ExecuteReader();
-                
-                List<>
+
+                List<List_Names> lists = new List<List_Names>();
 
                 while (reader.Read())
                 {
+                    List_Names list = ReadList(reader);
+                    lists.Add(list);
 
                 }
 
-            }
+                return lists.Max(l => l.ID);
+            } 
+        }
+        private List_Names ReadList(SqlDataReader reader)
+        {
+            List_Names list = new List_Names();
+
+            list.ID = reader.GetInt32(0);
+            list.List_Name = reader.GetString(1);
+
+            return list;
         }
     }
 }

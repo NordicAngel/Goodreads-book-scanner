@@ -1133,6 +1133,16 @@
             "rid": "win"
           }
         }
+      },
+      "RestfulLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RestfulLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RestfulLibrary.dll": {}
+        }
       }
     }
   },
@@ -3427,11 +3437,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "RestfulLibrary/1.0.0": {
+      "type": "project",
+      "path": "../OpenLibraryWebServiceLibrary/RestfulLibrary.csproj",
+      "msbuildProject": "../OpenLibraryWebServiceLibrary/RestfulLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
+      "RestfulLibrary >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -3461,7 +3477,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj": {
+              "projectPath": "C:\\Users\\User\\OneDrive\\Zealand\\eksamen\\Scan-a-book\\RestfulOpenLibrary\\OpenLibraryWebServiceLibrary\\RestfulLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
