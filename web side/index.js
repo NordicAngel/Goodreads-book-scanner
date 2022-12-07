@@ -16,15 +16,16 @@ const app = Vue.createApp({
             workTrimmed: "",
             listName: "",
             addToListProps: {
-                listID: "",
+                listID: 0,
                 ISBN: ""
             },
             connectionStatus: ""
             }
 
         },
-
-
+        created: function(){
+            this.GetBookLists()
+        },
         methods: {
             //Finder en bog ved hjælp af et API kald ud fra dens ISBN nummer
             GetBookByIsbn(){
@@ -59,22 +60,12 @@ const app = Vue.createApp({
             },
 
             GetBookLists(){
-                const Listsource = `https://openlibrary.azurewebsites.net/api/book`   
+                const Listsource = `https://openlibrary.azurewebsites.net/api/list`   
                 
                 axios.get(Listsource)
-
-
-
-            
                     .then( response =>{
                        this.ListName = response.data;
-                       console.log(response);
                        console.log(this.ListName);
-                       var listLength = this.ListName.length
-                       for (var i = 0; i<listLength; i++){
-
-                        console.log(this.ListName[i].list_Name);
-                       }
                     })
                     .catch(function(error){
                         console.log(error);

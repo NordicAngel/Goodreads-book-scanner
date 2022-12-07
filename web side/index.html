@@ -50,15 +50,15 @@
             Publish Date: {{ publishDate }}
         </div>
 
-        <form class="row" style="position:relative; left: 80px; top:80px;">
-            <input type="hidden" Name="ID" id="hisddenfield">
-            <input type="text" class="form" v-model="addToListProps.listID" id="form-input-is-List_ID" placeholder="List_ID">
-        </form>        
+        <div class="row" style="position:relative; left: 80px; top:80px;">
+            <select v-model="addToListProps.listID">
+                <option v-for="name in ListName" v-text="name.list_Name" :value="name.id"></option>
+            </select>
+            <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
+        </div>        
             
         
 
-        <div class="row" style="position:relative; left: 80px; top:100px;">
-        <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
 
         <div class="row" style="position:relative; left: 80px; top:120px;">
         <button class="btn btn-success" type="button " @click="CreateNewList()"> Lav ny liste </button>
