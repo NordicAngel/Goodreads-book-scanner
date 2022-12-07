@@ -21,29 +21,40 @@ const app = Vue.createApp({
                 console.log(response.data)
                 for (book in response.data){
                     console.log(book)
-                    this.list.push(this.GetBookByIsbn(response.data[book].isbn))
+                    this.GetBookByIsbn(book, response.data[book].isbn)
                 }
+                console.log(this.list)
             })
-            console.log(this.list)
             
         },
-        GetBookByIsbn(isbn){
+        GetBookByIsbn(index, isbn){
             const BookSource = `https://openlibrary.org/isbn/${isbn}.json`
             console.log("isbn " + isbn)
             axios.get(BookSource)
             .then( response =>{
                 const obj = {
                     title: response.data.title,
-                    author: response.data.authors,
+                    author: "Unknown",
                     numberOfPages: response.data.number_of_pages
                 }
-                return obj
+                this.list.push(obj)
+                this.GetAuthorName(index, response.data.authors[0].key.split("/")[2])
             })
             .catch(function(error){
                 console.log(error);
             })
-        }
-        
+        },
+        GetAuthorName(index, authorID){
+            const AutherSource = `https://openlibrary.org/authors/${authorID}.json`
+            console.log(authorID)
+            axios.get(AutherSource)
+            .then( response =>{
+                  this.list[index].author = response.data.name
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        },
     },
 
     created: function(){
