@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RestfulLibrary.Model;
+using RestfulOpenLibrary.Managers;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,24 +10,29 @@ namespace RestfulOpenLibrary.Controllers
     [ApiController]
     public class ListController : ControllerBase
     {
+
+        private readonly ListManager listmanager = new ListManager();
         // GET: api/<ListController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAll()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(listmanager.GetAll());
         }
 
         // GET api/<ListController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult GetByID(int i
         {
-            return "value";
+            return Ok(listmanager.GetByID(id));
         }
 
         // POST api/<ListController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] string name)
         {
+
+            return Created("https://openlibrary.azurewebsites.net/api/list",listmanager.AddList(name));
         }
 
         // PUT api/<ListController>/5
@@ -39,5 +46,9 @@ namespace RestfulOpenLibrary.Controllers
         public void Delete(int id)
         {
         }
+
+        
+
+
     }
 }
