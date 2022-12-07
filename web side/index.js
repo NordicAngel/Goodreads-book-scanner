@@ -85,11 +85,8 @@ const app = Vue.createApp({
             },
 
             AddBookToList(){
-                const Listsource = `https://openlibrary.azurewebsites.net/api/book`   
-                
-
                 axios.post(`https://openlibrary.azurewebsites.net/api/book`, {
-                    List_Name: this.addToListProps.listID,
+                    List_ID: this.addToListProps.listID,
                     isbn: this.addToListProps.ISBN
                 })
 
@@ -162,6 +159,11 @@ function SetupWebSocket(){
     while (true){
         console.log(ws.readyState)
     }
+}
+
+window.onbeforeunload = function(e) {
+    e.preventDefault();
+    e.returnValue = '';
 }
 
 //GetBookByIsbn()

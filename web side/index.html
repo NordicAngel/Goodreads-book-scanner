@@ -15,7 +15,7 @@
         
     <div>
         <button class="btn btn-dark" type="button " @click="GetBookLists()"> TEST </button>
-        <p> {{ ListName }}</p>
+        <p> {{ listName }}</p>
     </div>    
         
          
@@ -64,7 +64,7 @@
         
 
         <form class="row" style="position:relative; left: 80px; top:100px;">
-        <button class="btn btn-success" data-info="Data from button" @click="AddBookToList()" onclick="populate(this);">Tilføj til liste</button>
+        <button class="btn btn-success" data-info="Data from button" @click="AddBookToList()">Tilføj til liste</button>
         </form>
 
         <form class="row" style="position:relative; left: 80px; top:120px;">
