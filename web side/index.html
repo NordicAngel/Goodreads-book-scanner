@@ -58,18 +58,17 @@
         <form class="row" style="position:relative; left: 80px; top:80px;">
             <input type="hidden" Name="ID" id="hisddenfield">
             <input type="text" class="form" v-model="addToListProps.listID" id="form-input-is-List_ID" placeholder="List_ID">
-            <input type="text" class="form" v-model="addToListProps.ISBN" id="form-input-is-isbn" placeholder="isbn">
         </form>        
             
         
 
-        <form class="row" style="position:relative; left: 80px; top:100px;">
-        <button class="btn btn-success" data-info="Data from button" @click="AddBookToList()">Tilføj til liste</button>
-        </form>
+        <div class="row" style="position:relative; left: 80px; top:100px;">
+        <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
+        </div>
 
-        <form class="row" style="position:relative; left: 80px; top:120px;">
+        <div class="row" style="position:relative; left: 80px; top:120px;">
         <button class="btn btn-success" type="button " @click="CreateNewList()"> Lav ny liste </button>
-        </form>    
+        </div>    
     </div>   
     
      

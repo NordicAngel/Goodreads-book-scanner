@@ -87,11 +87,10 @@ const app = Vue.createApp({
             AddBookToList(){
                 axios.post(`https://openlibrary.azurewebsites.net/api/book`, {
                     List_ID: this.addToListProps.listID,
-                    isbn: this.addToListProps.ISBN
+                    isbn: this.isbn
                 })
 
                 .then((response) => {
-                    this.isbn = response.data;
                     console.log(response);
                     console.log(this.isbn)
                 })
@@ -99,8 +98,6 @@ const app = Vue.createApp({
                 .catch(function (error){
                     console.log(error);
                 })
-
-                
             },
 
                 
@@ -161,10 +158,6 @@ function SetupWebSocket(){
     }
 }
 
-window.onbeforeunload = function(e) {
-    e.preventDefault();
-    e.returnValue = '';
-}
 
 //GetBookByIsbn()
 //SetupWebSocket()
