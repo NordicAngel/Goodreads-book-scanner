@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RestfulLibrary.Model;
-
+using RestfulOpenLibrary.Managers;
 
 namespace RestfulOpenLibraryTests
 {
@@ -11,29 +11,36 @@ namespace RestfulOpenLibraryTests
         public void CreateListTest()
         {
             //arrange
-            int countBefore = GetAll().count();
+            ListManager mgr = new ListManager();
+            int countBefore = mgr.GetAll().Count;
+
 
             //act
-            int id = AddList("Dummy List");
+            mgr = new ListManager();
+            int id = mgr.AddList("Dummy List");
 
             //assert
-            Assert.AreEqual(GetAll().count(), countBefore);
-            DeleteList(id);
+            mgr = new ListManager();
+            Assert.AreEqual(mgr.GetAll().Count(), countBefore);
+            mgr.DeleteList(id);
         }
+
+        
 
         [TestMethod]
         public void DeleteListTest()
         {
             //arrange
-            List<List_Names> listbefore = GetAll();
+            ListManager mgr = new ListManager();
+            List<List_Names> listbefore = mgr.GetAll();
             
 
             //act
             int id = 4;
-            DeleteList(id);
+            mgr.DeleteList(id);
 
             //assert
-            List<List_Names> listafter = GetAll();
+            List<List_Names> listafter = mgr.GetAll();
             Assert.AreNotEqual(listbefore.Count(), listafter.Count());
 
 

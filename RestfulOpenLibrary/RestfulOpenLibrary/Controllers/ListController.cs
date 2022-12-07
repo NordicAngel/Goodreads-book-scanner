@@ -22,7 +22,7 @@ namespace RestfulOpenLibrary.Controllers
         // GET api/<ListController>/5
         [HttpGet]
         [Route("{id}")]
-        public IActionResult GetByID(int i
+        public IActionResult GetByID(int id)
         {
             return Ok(listmanager.GetByID(id));
         }
