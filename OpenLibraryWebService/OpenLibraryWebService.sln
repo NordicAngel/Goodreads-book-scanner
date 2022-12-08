@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenLibraryWebService", "OpenLibraryWebService\OpenLibraryWebService.csproj", "{9BFABDC4-6652-44EC-B701-17E9FC16F337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLibraryWebServiceLibrary", "OpenLibraryWebServiceLibrary\OpenLibraryWebServiceLibrary.csproj", "{C47472D6-35E1-43CD-B04D-17B28B909711}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BFABDC4-6652-44EC-B701-17E9FC16F337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BFABDC4-6652-44EC-B701-17E9FC16F337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BFABDC4-6652-44EC-B701-17E9FC16F337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BFABDC4-6652-44EC-B701-17E9FC16F337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47472D6-35E1-43CD-B04D-17B28B909711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47472D6-35E1-43CD-B04D-17B28B909711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47472D6-35E1-43CD-B04D-17B28B909711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47472D6-35E1-43CD-B04D-17B28B909711}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29BFC06E-1D86-40FB-8370-E33D2098176A}
+	EndGlobalSection
+EndGlobal

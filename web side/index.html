@@ -12,47 +12,60 @@
 
 <body>
     <div id="app">
-    <div id="scanpopup" class="popup hide">
-        <span class="popuptext">
-            {{ connectionStatus }}
-        </span>
-    </div>
-    <div style="position:relativ;">
-        <input id="inputField" type="text" v-model="isbn" @keyup.enter="GetBookByIsbn">
-        <button class="btn btn-dark" type="button" @click="GetBookByIsbn">search</button>
-        <button class="btn" @click="OpenWebSocket">Begin scan</button>
+        <div id="scanpopup" class="popup hide">
+            <span class="popuptext">
+                {{ connectionStatus }}
+            </span>
+        </div>
 
-    </div>    
-    <div v-show="show">
+        <div style="position:relativ;">
+            <input id="inputField" type="number" v-model="isbn" @keyup.enter="GetBookByIsbn">
+            <button class="btn btn-dark" type="button" @click="GetBookByIsbn">search</button>
+            <button class="btn" @click="OpenWebSocket">Begin scan</button>
+        </div>  
         
-        <div class="BookData"> 
-            Titles: {{ title }}
-        </div>
-        <div class="BookData"> 
-            Author: {{ personalAuthorName }}
-        </div>
-        <div class="BookData" >
-            Number of pages: {{ numberOfPages }}
-        </div>
-        <div></div>
-        <div class="BookData" >
-            Genre: 
-            <li v-for="(value) in subjects">
-                {{ value }}
-            </li>
-           
-        </div>
-        <div class="BookData" >
-            Language(s): {{ languageTrimmed }}
-        </div>
-        <div class="BookData" >
-            Publish Date: {{ publishDate }}
-        </div>
-    </div>    
-</div>
+        <div v-show="show">
+            
+            <div class="BookData"> 
+                Titles: {{ title }}
+            </div>
+            <div class="BookData"> 
+                Author: {{ personalAuthorName }}
+            </div>
+
+            <div class="BookData" >
+                Number of pages: {{ numberOfPages }}
+            </div>
+            
+            <div class="BookData" >
+                Genre: 
+                <li v-for="(value) in subjects">
+                    {{ value }}
+                </li>   
+            </div>
+
+            <div class="BookData" >
+                Language(s): {{ languageTrimmed }}
+            </div>
+
+            <div class="BookData" >
+                Publish Date: {{ publishDate }}
+            </div>
+
+            <div class="buttonPosition">
+                <select v-model="addToListProps.listID">
+                    <option v-for="name in ListName" v-text="name.list_Name" :value="name.id"></option>
+                </select>
+                <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
+            </div>        
+        
+            <div class="buttonPosition" >
+                <button class="btn btn-success" type="button " @click="CreateNewList()"> Lav ny liste </button>
+            </div>    
+        </div>    
+    </div>
 
 <script src="./index.js"></script>
 <script>app.mount("#app");</script>
 </body>
-
 </html>
