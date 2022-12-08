@@ -1,15 +1,32 @@
 .BookData{
-    position: relative;
-    left: 80px;
     margin: 10px; 
     background-color:bisque;
-    width: 85%;
+    border: 1px solid brown;
+    padding: 2px;
     
 }
 
+.screen{
+    display:flex;
+    flex-flow: row;
+    height: 100vh;
+    width: 100vw;
+}
+
+.listbar{
+    flex: 0 1 auto;
+    border: 1px solid brown;
+    width: 150px;
+    background-color: bisque;
+}
+
+.main{
+    flex: 0 1 auto;
+    margin: 10px;
+    width: 100%;
+}
+
 .buttonPosition{
-    position: relative;
-    left: 80px;
     top: 120px;
 }
 
