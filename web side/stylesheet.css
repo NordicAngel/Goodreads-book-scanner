@@ -3,7 +3,14 @@
     left: 80px;
     margin: 10px; 
     background-color:bisque;
+    width: 85%;
     
+}
+
+.buttonPosition{
+    position: relative;
+    left: 80px;
+    top: 120px;
 }
 
 .popup {
@@ -20,16 +27,5 @@
 
 .hide{
     visibility: visible;
-    /* -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s; */
-}
 
-@-webkit-keyframes fadeIn{
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn{
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
