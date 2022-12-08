@@ -7,21 +7,21 @@ namespace RestfulOpenLibraryTests
     [TestClass]
     public class UnitTestRestfulServices
     {
+        private const string connectionstring = "Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password=AdminDaniel1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         [TestMethod]
         public void CreateListTest()
         {
             //arrange
-            ListManager mgr = new ListManager();
+            ListManager mgr = new ListManager(connectionstring);
             int countBefore = mgr.GetAll().Count;
 
 
             //act
-            mgr = new ListManager();
-            int id = mgr.AddList("Dummy List");
+            
+            int id = mgr.AddList("Dummy List").ID;
 
             //assert
-            mgr = new ListManager();
-            Assert.AreEqual(mgr.GetAll().Count(), countBefore);
+            Assert.AreEqual(countBefore + 1, mgr.GetAll().Count());
             mgr.DeleteList(id);
         }
 
@@ -31,17 +31,19 @@ namespace RestfulOpenLibraryTests
         public void DeleteListTest()
         {
             //arrange
-            ListManager mgr = new ListManager();
+            ListManager mgr = new ListManager(connectionstring);
+            mgr.AddList("test");
             List<List_Names> listbefore = mgr.GetAll();
             
 
             //act
-            int id = 4;
-            mgr.DeleteList(id);
-
-            //assert
+            
+            mgr.DeleteList(listbefore[^1].ID);
             List<List_Names> listafter = mgr.GetAll();
-            Assert.AreNotEqual(listbefore.Count(), listafter.Count());
+            //assert
+            
+
+            Assert.AreEqual(listbefore.Count - 1, listafter.Count);
 
 
 

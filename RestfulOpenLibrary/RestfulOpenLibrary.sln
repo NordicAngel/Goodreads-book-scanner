@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulOpenLibraryTests", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulLibrary", "OpenLibraryWebServiceLibrary\RestfulLibrary.csproj", "{61EBD68F-6126-4E50-B6CF-30DDDBA4B27E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F6F81A7-D0B6-4F22-A7E4-6E404E50E803}"
+	ProjectSection(SolutionItems) = preProject
+		dbo.Table.sql = dbo.Table.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

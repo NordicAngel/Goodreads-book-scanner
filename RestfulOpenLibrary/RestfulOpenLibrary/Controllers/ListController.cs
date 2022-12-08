@@ -11,7 +11,7 @@ namespace RestfulOpenLibrary.Controllers
     public class ListController : ControllerBase
     {
 
-        private readonly ListManager listmanager = new ListManager();
+        private readonly ListManager listmanager = new ListManager("Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password=AdminDaniel1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         // GET: api/<ListController>
         [HttpGet]
         public IActionResult GetAll()
@@ -24,7 +24,7 @@ namespace RestfulOpenLibrary.Controllers
         [Route("{id}")]
         public IActionResult GetByID(int id)
         {
-            return Ok(listmanager.GetByID(id));
+            return Ok(listmanager.GetById(id));
         }
 
         // POST api/<ListController>

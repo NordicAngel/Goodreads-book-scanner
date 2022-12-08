@@ -6,8 +6,13 @@ namespace RestfulOpenLibrary.Managers
 {
     public class ListManager: IListManager<List_Names>
     {
-        private const string _connectionString = @"Data Source=(localdb)\\ProjectsV13;Initial Catalog=RestTestDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        public int AddList(string name)
+        
+        public ListManager(string connectionstring)
+        {
+            _connectionString = connectionstring;
+        }
+        private readonly string _connectionString;
+        public List_Names AddList(string name)
         {
             string sql = "INSERT INTO List_Names values(@name)";
             string sql2 = "SELECT ID, List_Name FROM List_Names WHERE List_Name = @name";
@@ -40,16 +45,14 @@ namespace RestfulOpenLibrary.Managers
 
                 }
 
-                return lists.Max(l => l.ID);
+                return new List_Names() { ID = lists.Max(l => l.ID), List_Name = name };
             }
         }
 
-        
-
-
-
-        public int DeleteList(int id)
+       
+        public List_Names DeleteList(int id)
         {
+            List_Names list = GetById(id);
             string sql = "DELETE FROM List_Names WHERE ID = @id";
 
             using(SqlConnection connection = new SqlConnection(_connectionString))
@@ -67,14 +70,14 @@ namespace RestfulOpenLibrary.Managers
 
             }
 
-            return id;
+            return list;
         }
 
 
 
-        public int GetByID(int id)
+        public List_Names GetById(int id)
         {
-            string sql = "Select FROM List_Names WHERE ID =@id";
+            string sql = "Select * FROM List_Names WHERE ID = @id";
             
             using SqlConnection connection = new SqlConnection(_connectionString);
             {
@@ -84,13 +87,12 @@ namespace RestfulOpenLibrary.Managers
 
                 cmd.Parameters.AddWithValue("id", id);
 
-                int rows = cmd.ExecuteNonQuery();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-                if (rows != 1)
-                    throw new ArgumentException("Cant find list");
+                reader.Read();
+
+                return ReadList(reader);
             }
-
-            return id;
         }
 
         public List<List_Names> GetAll()
@@ -124,21 +126,6 @@ namespace RestfulOpenLibrary.Managers
             list.List_Name = reader.GetString(1);
 
             return list;
-        }
-
-        public List_Names Addlist(List_Names List_Names)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List_Names Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List_Names GetBýId(int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

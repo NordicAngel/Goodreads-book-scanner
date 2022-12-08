@@ -4,11 +4,11 @@
     {
         List<T> GetAll();
 
-        T Addlist(T name);
+        T AddList(string name);
 
-        T Delete(int id);
+        T DeleteList(int id);
 
-        T GetBýId(int id);
+        T GetById(int id);
 
 
     }
