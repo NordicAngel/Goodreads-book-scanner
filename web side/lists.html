@@ -16,9 +16,16 @@
         
             <div v-for="book in list" class="row" style="position:relative; left: 80px; top:10px; background-color:bisque">
                 Titles: {{ book }} Author: {{ book }}
+            </div>               
+    </div>  
+    
+        <div v-show="show">
+
+            <div class="collum">
+                ListName: {{ list }}
             </div>
-                
-    </div>   
+
+        </div>
 </div>
 
 

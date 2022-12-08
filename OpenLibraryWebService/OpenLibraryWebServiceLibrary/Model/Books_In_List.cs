@@ -10,14 +10,14 @@ namespace OpenLibraryWebServiceLibrary.Model
     {
         public int ID { get; set; }
         public int List_ID { get; set; }
-        public int ISBN { get; set; }
+        public Int64 ISBN { get; set; }
 
         public Books_In_List()
         {
 
         }
 
-        public Books_In_List(int id, int listID, int isbn)
+        public Books_In_List(int id, int listID, Int64 isbn)
         {
             ID = id;
             List_ID = listID;

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj": {}
+    "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
+    "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
         "projectName": "OpenLibraryWebServiceLibrary",
-        "projectPath": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
-        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\obj\\",
+        "projectPath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj",
+        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,21 +60,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj": {
+    "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
+        "projectUniqueName": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
         "projectName": "OpenLibraryWebService",
-        "projectPath": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
-        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebService\\obj\\",
+        "projectPath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\OpenLibraryWebService.csproj",
+        "packagesPath": "C:\\Users\\Kasper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,14 +86,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
-                "projectPath": "C:\\Users\\sebas\\Desktop\\3sem teknologi\\rasp_projekt\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj"
+              "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj": {
+                "projectPath": "C:\\Users\\Kasper\\Desktop\\3 semester projekt\\openlibrary-book-scanner\\OpenLibraryWebService\\OpenLibraryWebServiceLibrary\\OpenLibraryWebServiceLibrary.csproj"
               }
             }
           }
@@ -99,6 +109,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.Extensions.Caching.SqlServer": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -127,7 +141,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

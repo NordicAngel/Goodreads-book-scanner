@@ -93,7 +93,7 @@ namespace OpenLibraryWebService.Managers
 
             BookNames.ID = reader.GetInt32(0);
             BookNames.List_ID = reader.GetInt32(1);
-            BookNames.ISBN = reader.GetInt32(2);
+            BookNames.ISBN = reader.GetInt64(2);
 
             return BookNames;
         }
