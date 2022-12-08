@@ -16,23 +16,20 @@ const app = Vue.createApp({
             workTrimmed: "",
             listName: "",
             addToListProps: {
-                listID: "",
+                listID: 0,
                 ISBN: ""
-            }
-            
-
+            },
+            connectionStatus: ""
             }
 
         },
-
-
+        created: function(){
+            this.GetBookLists()
+        },
         methods: {
             //Finder en bog ved hjælp af et API kald ud fra dens ISBN nummer
             GetBookByIsbn(){
                 const BookSource = `https://openlibrary.org/isbn/${this.isbn}.json`
-                inputfield = document.getElementById("inputField")
-                inputfield.select()
-
                 axios.get(BookSource)
 
             
@@ -54,6 +51,8 @@ const app = Vue.createApp({
                         this.workTrimmed = response.data.works[0].key.split("/")[2]
 
                         this.GetAuthorName()
+                        //Gør vores oversigt i view delen er usynlig indtil der klikkes på knappen 
+                        this.show = true
                     })
                     .catch(function(error){
                         console.log(error);
@@ -61,22 +60,12 @@ const app = Vue.createApp({
             },
 
             GetBookLists(){
-                const Listsource = `https://openlibrary.azurewebsites.net/api/book`   
+                const Listsource = `https://openlibrary.azurewebsites.net/api/list`   
                 
                 axios.get(Listsource)
-
-
-
-            
                     .then( response =>{
                        this.ListName = response.data;
-                       console.log(response);
                        console.log(this.ListName);
-                       var listLength = this.ListName.length
-                       for (var i = 0; i<listLength; i++){
-
-                        console.log(this.ListName[i].list_Name);
-                       }
                     })
                     .catch(function(error){
                         console.log(error);
@@ -85,16 +74,12 @@ const app = Vue.createApp({
             },
 
             AddBookToList(){
-                const Listsource = `https://openlibrary.azurewebsites.net/api/book`   
-                
-
                 axios.post(`https://openlibrary.azurewebsites.net/api/book`, {
-                    List_Name: this.addToListProps.listID,
-                    isbn: this.addToListProps.ISBN
+                    List_ID: this.addToListProps.listID,
+                    isbn: this.isbn
                 })
 
                 .then((response) => {
-                    this.isbn = response.data;
                     console.log(response);
                     console.log(this.isbn)
                 })
@@ -102,8 +87,6 @@ const app = Vue.createApp({
                 .catch(function (error){
                     console.log(error);
                 })
-
-                
             },
 
                 
@@ -111,7 +94,6 @@ const app = Vue.createApp({
             //Får fat i forfatterens navn ved at lave et nyt API kald med forfatter id for at få fat i navnet.
             GetAuthorName(){
                 const AutherSource = `https://openlibrary.org/authors/${this.authorTrimmed}.json`
-                console.log(this.authorTrimmed)
                 axios.get(AutherSource)
                 .then( response =>{
                       this.personalAuthorName = response.data.name
@@ -131,39 +113,41 @@ const app = Vue.createApp({
                     console.log(error);
                 })
             },
+            OpenWebSocket(){
+                let ip = "ws://192.168.14.102:12000"
+                
+                // Showing popup
+                document.getElementById('scanpopup').classList.remove("hide")
+                this.connectionStatus = "Establishing connection ..."
+                
+                // Trying to open webSocket
+                var ws = new WebSocket(ip)
+                
+                // On succesful opening changes popup text 
+                ws.onopen = () => {
+                    this.connectionStatus = "Ready for scanning ..."
+                }
 
-            //Gør voes oversigt i view delen er usynlig indtil der klikkes på knappen 
-            TurnTrue(){
-                this.show=true
+                // On incoming message insert isbn and searches for a book
+                ws.onmessage = (evt) => {
+                    this.isbn = evt.data
+                    this.GetBookByIsbn()
+                }
+
+                // On closing connection hides popup
+                ws.onclose = () => {
+                document.getElementById('scanpopup').classList.add("hide")
+                    this.connectionStatus = ""
+                }
+
+                // On error print console
+                ws.onerror = (evt) => {
+                    console.log(evt)
+                }
             }
         }
     },
 
 );
 
-
-
-
-function SetupWebSocket(){
-
-    let ip = "ws://10.200.178.183:12000"
-
-    var ws = new WebSocket(ip)
-
-    ws.onopen = function(){
-        alert("Connection is open")
-    }
-
-    ws.onmessage = function(evt){
-        console.log(`isbn is: ${evt.data}`)
-        
-    }
-
-    while (true){
-        console.log(ws.readyState)
-    }
-}
-
-//GetBookByIsbn()
-//SetupWebSocket()
 
