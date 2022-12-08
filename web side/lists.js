@@ -4,32 +4,29 @@ const app = Vue.createApp({
             list: []
         }
     },
+
     computed:{
+        //Gets id from url
         listID(){
             return new URLSearchParams(window.location.search).get('id')
         },
-       
-        
     },
+
     methods: {
+        //Fetches all book lists from our database through our restservice
         GetList(){
             const listSource = `https://openlibrary.azurewebsites.net/api/book/${this.listID}`
-            console.log(listSource)
             axios.get(listSource)
             .then((response)=>{
-                //this.list = response.data
-                console.log(response.data)
                 for (book in response.data){
-                    console.log(book)
                     this.GetBookByIsbn(book, response.data[book].isbn)
                 }
-                console.log(this.list)
             })
-            
         },
+
+        //Fetches a book from openlibrary API given the books isbn 
         GetBookByIsbn(index, isbn){
             const BookSource = `https://openlibrary.org/isbn/${isbn}.json`
-            console.log("isbn " + isbn)
             axios.get(BookSource)
             .then( response =>{
                 const obj = {
@@ -44,9 +41,10 @@ const app = Vue.createApp({
                 console.log(error);
             })
         },
+
+        //Fetches an authors name given the author ID given from openlibrary API
         GetAuthorName(index, authorID){
             const AutherSource = `https://openlibrary.org/authors/${authorID}.json`
-            console.log(authorID)
             axios.get(AutherSource)
             .then( response =>{
                   this.list[index].author = response.data.name
@@ -56,10 +54,9 @@ const app = Vue.createApp({
             })
         },
     },
-
+    
+    //When website is "created" these methods are called
     created: function(){
         this.GetList()
     }
 });
-
-// window.app.GetList()

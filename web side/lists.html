@@ -10,22 +10,15 @@
 </head>
 
 <body>
-    <div id="app">
-        
+    <div id="app">  
         <div >
-        
-
             <div v-for="book in list" class="BookData">
                 Titles: {{ book.title }}; Author: {{ book.author }}; Number of pages: {{ book.numberOfPages }}
-
             </div>
-
         </div>
-</div>
-
+    </div>
 
 <script src="./lists.js"></script>
 <script>app.mount("#app");</script>
 </body>
-
 </html>

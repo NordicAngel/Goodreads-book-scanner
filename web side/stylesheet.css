@@ -3,7 +3,14 @@
     left: 80px;
     margin: 10px; 
     background-color:bisque;
+    width: 85%;
     
+}
+
+.buttonPosition{
+    position: relative;
+    left: 80px;
+    top: 120px;
 }
 
 .popup {
