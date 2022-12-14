@@ -29,10 +29,9 @@ namespace OpenLibraryWebService.Controllers
 
         // POST api/<ListController>
         [HttpPost]
-
-        public IActionResult Post([FromBody] List_Names list_Names)
+        public IActionResult Post([FromBody] List_Names List_Names)
         {
-            return Ok(_listManager.Create(list_Names));
+            return Created("https://openlibrary.azurewebsites.net/api/list", _listManager.Create(List_Names));
         }
 
         

@@ -22,3 +22,15 @@ C:\Users\Kasper\.vscode\template\openlibrary-book-scanner\OpenLibraryWebService\
 C:\Users\Kasper\.vscode\template\openlibrary-book-scanner\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\refint\OpenLibraryWebServiceLibrary.dll
 C:\Users\Kasper\.vscode\template\openlibrary-book-scanner\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.pdb
 C:\Users\Kasper\.vscode\template\openlibrary-book-scanner\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\ref\OpenLibraryWebServiceLibrary.dll
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\bin\Debug\net6.0\OpenLibraryWebServiceLibrary.deps.json
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\bin\Debug\net6.0\OpenLibraryWebServiceLibrary.dll
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\bin\Debug\net6.0\OpenLibraryWebServiceLibrary.pdb
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.csproj.AssemblyReference.cache
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.AssemblyInfoInputs.cache
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.AssemblyInfo.cs
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.dll
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\refint\OpenLibraryWebServiceLibrary.dll
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\OpenLibraryWebServiceLibrary.pdb
+C:\Users\Danie\source\repos\openlibrary-book-scanner-1\OpenLibraryWebService\OpenLibraryWebServiceLibrary\obj\Debug\net6.0\ref\OpenLibraryWebServiceLibrary.dll

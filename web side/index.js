@@ -19,7 +19,9 @@ const app = Vue.createApp({
                 listID: 0,
                 ISBN: ""
             },
-            connectionStatus: ""
+            connectionStatus: "",
+            createNewList: "",
+            listIDNew: 0,
             }
         },
 
@@ -64,7 +66,7 @@ const app = Vue.createApp({
                 const Listsource = `https://openlibrary.azurewebsites.net/api/list`   
                 axios.get(Listsource)
                 .then( response =>{
-                    this.ListName = response.data;
+                    this.listName = response.data;
                 })
                 .catch(function(error){
                     console.log(error);
@@ -75,11 +77,29 @@ const app = Vue.createApp({
             AddBookToList(){
                 axios.post(`https://openlibrary.azurewebsites.net/api/book`, {
                     List_ID: this.addToListProps.listID,
-                    isbn: this.isbn
+                    isbn: this.isbn,
+                    
+                })
+                .then( reponse => {
+                    console.log(response.data);
                 })
                 .catch(function (error){
                     console.log(error);
                 })
+            },
+            // Creates a new list to lists in our databasse through our restservice
+            CreateNewList(){
+                axios.post('https://openlibrary.azurewebsites.net/api/list', {
+                    id: this.listIDNew,
+                    list_Name: this.createNewList,
+                })
+                .then(response =>{
+                    this.GetBookLists()
+                })
+
+                .catch(error => {
+                    console.log(error);  
+                }) 
             },
 
             //Fetches the authors from the openlibrary API given the author name ID from openlibrary

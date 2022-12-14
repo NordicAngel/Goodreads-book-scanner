@@ -9,14 +9,13 @@ namespace OpenLibraryWebService.Managers
 
         public List_Names Create(List_Names item)
         {
-            string sql = "INSERT INTO List_Names values(@ID, @List_Name)";
+            string sql = "INSERT INTO List_Names values(@List_Name)";
             using(SqlConnection connection = new SqlConnection(connectionstring))
             {
                 connection.Open();
 
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
-                cmd.Parameters.AddWithValue("@ID", item.ID);
                 cmd.Parameters.AddWithValue("@List_Name", item.List_Name);
 
                 int rows = cmd.ExecuteNonQuery();

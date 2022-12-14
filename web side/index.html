@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <title>OpenLibrary API</title>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -54,14 +55,16 @@
 
             <div class="buttonPosition">
                 <select v-model="addToListProps.listID">
-                    <option v-for="name in ListName" v-text="name.list_Name" :value="name.id"></option>
+                    <option v-for="name in listName" v-text="name.list_Name" :value="name.id"></option>
                 </select>
                 <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
             </div>        
         
             <div class="buttonPosition" >
-                <button class="btn btn-success" type="button " @click="CreateNewList()"> Lav ny liste </button>
+                <input type="text" v-model="createNewList">
+                <button class="btn btn-success" @click="CreateNewList();">Lav ny liste </button>
             </div>    
+
         </div>    
     </div>
 

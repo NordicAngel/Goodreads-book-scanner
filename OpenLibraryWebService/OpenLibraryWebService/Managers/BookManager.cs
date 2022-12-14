@@ -16,7 +16,6 @@ namespace OpenLibraryWebService.Managers
 
                 SqlCommand cmd = new SqlCommand(sql, connection);
 
-                //cmd.Parameters.AddWithValue("@ID", item.ID);
                 cmd.Parameters.AddWithValue("@List_ID", item.List_ID);
                 cmd.Parameters.AddWithValue("@ISBN", item.ISBN);
 
