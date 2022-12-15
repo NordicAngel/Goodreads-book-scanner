@@ -5,8 +5,9 @@ namespace OpenLibraryWebService.Managers
 {
     public class BookManager : IBookManager<Books_In_List>
     {
+        // Connectionstring to database
         private const string connectionstring = "Server=tcp:datamatiker-daniel.database.windows.net,1433;Initial Catalog=OpenLibrary;Persist Security Info=False;User ID=DanielAdmin;Password=AdminDaniel1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+        // Method to create a new list in database. Used through front-end.
         public Books_In_List Create(Books_In_List item)
         {
             string sql = "INSERT INTO Books_In_List1 values(@List_ID, @ISBN)";
@@ -31,7 +32,7 @@ namespace OpenLibraryWebService.Managers
             }
         }
 
-
+        // Method to show all Lists in database.
         public List<Books_In_List> GetAll()
         {
             List<Books_In_List> liste = new List<Books_In_List>();
@@ -59,7 +60,7 @@ namespace OpenLibraryWebService.Managers
             }
             return liste;
         }
-
+        // Method to get a specific list from database.
         public List<Books_In_List> GetByID(int id)
         {
             string sql = "SELECT * FROM Books_In_List1 where List_ID=@ID";
@@ -85,7 +86,7 @@ namespace OpenLibraryWebService.Managers
             return list;
             
         }
-
+        // Used to map the model from database. Used for GetByID / GetAll
         private Books_In_List ReadList(SqlDataReader reader)
         {
             Books_In_List BookNames = new Books_In_List();

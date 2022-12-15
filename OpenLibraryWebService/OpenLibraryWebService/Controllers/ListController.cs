@@ -2,6 +2,7 @@
 using OpenLibraryWebService.Managers;
 using OpenLibraryWebServiceLibrary.Model;
 using System.Collections;
+using System.ComponentModel;
 
 namespace OpenLibraryWebService.Controllers
 {
@@ -13,15 +14,16 @@ namespace OpenLibraryWebService.Controllers
 
         // GET: api/<ListController>
         [HttpGet]
+        [ProducesResponseType(200)]
         public IActionResult GetAll()
         {
-            //return new string[] { "value1", "value2" };
             return Ok(_listManager.GetAll());
         }
 
         // GET api/<ListController>/5
         [HttpGet]
         [Route("{id}")]
+        [ProducesResponseType(200)]
         public IActionResult Get(int id)
         {
             return Ok(_listManager.GetByID(id));
@@ -29,6 +31,7 @@ namespace OpenLibraryWebService.Controllers
 
         // POST api/<ListController>
         [HttpPost]
+        [ProducesResponseType(201)]
         public IActionResult Post([FromBody] List_Names List_Names)
         {
             return Created("https://openlibrary.azurewebsites.net/api/list", _listManager.Create(List_Names));

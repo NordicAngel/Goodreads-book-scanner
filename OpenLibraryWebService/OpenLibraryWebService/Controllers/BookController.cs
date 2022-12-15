@@ -13,15 +13,16 @@ namespace OpenLibraryWebService.Controllers
 
         // GET: api/<BookController>
         [HttpGet]
+        [ProducesResponseType(200)]
         public IActionResult GetAll()
         {
-            //return new string[] { "value1", "value2" };
             return Ok(_bookManager.GetAll());
         }
 
         // GET api/<BookController>/5
         [HttpGet]
         [Route("{id}")]
+        [ProducesResponseType(200)]
         public IActionResult Get(int id)
         {
             return Ok(_bookManager.GetByID(id));
@@ -29,6 +30,7 @@ namespace OpenLibraryWebService.Controllers
 
         // POST api/<ListController>
         [HttpPost]
+        [ProducesResponseType(201)]
 
         public IActionResult Post([FromBody] Books_In_List List_ID)
         {

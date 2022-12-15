@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+// Using adding Policy for Cors
 builder.Services.AddCors(options => {
 options.AddPolicy(
     "Allow All", builder =>
@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+// Making builder use Cors
 app.UseCors("Allow All");
 
 app.UseAuthorization();
