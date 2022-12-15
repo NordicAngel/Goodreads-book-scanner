@@ -21,7 +21,7 @@
 
         <div style="position:relativ;">
             <input id="inputField" type="number" v-model="isbn" @keyup.enter="GetBookByIsbn">
-            <button class="btn btn-dark" type="button" @click="GetBookByIsbn">search</button>
+            <button class="btn btn-dark" type="button" @click="GetBookByIsbn">Search</button>
             <button class="btn" @click="OpenWebSocket">Begin scan</button>
         </div>  
         
@@ -57,12 +57,12 @@
                 <select v-model="addToListProps.listID">
                     <option v-for="name in listName" v-text="name.list_Name" :value="name.id"></option>
                 </select>
-                <button class="btn btn-success" @click="AddBookToList()">Tilføj til liste</button>
+                <button class="btn btn-success" @click="AddBookToList()">Add to list</button>
             </div>        
         
             <div class="buttonPosition" >
-                <input type="text" v-model="createNewList">
-                <button class="btn btn-success" @click="CreateNewList();">Lav ny liste </button>
+                <input type="text" v-model="createNewList" placeholder="List name">
+                <button class="btn btn-success" @click="CreateNewList();">Create new list</button>
             </div>    
 
         </div>    
