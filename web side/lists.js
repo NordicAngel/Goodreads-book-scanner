@@ -15,7 +15,7 @@ const app = Vue.createApp({
     methods: {
         //Fetches all book lists from our database through our restservice
         GetList(){
-            const listSource = `https://openlibrary.azurewebsites.net/api/book/${this.listID}`
+            const listSource = `https://openlibrary2.azurewebsites.net/api/book/${this.listID}`
             axios.get(listSource)
             .then((response)=>{
                 for (book in response.data){

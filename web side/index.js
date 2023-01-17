@@ -63,7 +63,7 @@ const app = Vue.createApp({
 
             //Fetches all lists from our database through our restservice
             GetBookLists(){
-                const Listsource = `https://openlibrary.azurewebsites.net/api/list`   
+                const Listsource = `https://openlibrary2.azurewebsites.net/api/list`   
                 axios.get(Listsource)
                 .then( response =>{
                     this.listName = response.data;
@@ -75,7 +75,7 @@ const app = Vue.createApp({
 
             //Adds a book to list in our database through our restservice
             AddBookToList(){
-                axios.post(`https://openlibrary.azurewebsites.net/api/book`, {
+                axios.post(`https://openlibrary2.azurewebsites.net/api/book`, {
                     List_ID: this.addToListProps.listID,
                     isbn: this.isbn,
                     
@@ -89,7 +89,7 @@ const app = Vue.createApp({
             },
             // Creates a new list to lists in our databasse through our restservice
             CreateNewList(){
-                axios.post('https://openlibrary.azurewebsites.net/api/list', {
+                axios.post('https://openlibrary2.azurewebsites.net/api/list', {
                     id: this.listIDNew,
                     list_Name: this.createNewList,
                 })
